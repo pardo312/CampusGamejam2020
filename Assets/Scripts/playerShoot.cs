@@ -40,7 +40,7 @@ public class playerShoot : MonoBehaviour
                     if (Input.GetButton("Fire1"))
                     {
                         animatorSlingshot.SetBool("Shoot",true);
-                        LeanTween.moveLocal( gameObject, gameObject.transform.localPosition + new Vector3(0.2f,0,-1f), 0.1f).setEase(LeanTweenType.linear).setOnComplete(onCompleteLeanTween);
+                        LeanTween.moveLocal( gameObject, gameObject.transform.localPosition + new Vector3(0.2f,0,-1f), 0.05f).setEase(LeanTweenType.linear).setOnComplete(onCompleteLeanTween);
                        
                     }
                     if (Input.GetButtonUp("Fire1"))
@@ -71,7 +71,7 @@ public class playerShoot : MonoBehaviour
         endInitLaunch=false;
     }
     void setNextRockToCurrent(){
-        if(ApplicationModel.timerUntilShoot>700)
+        if(ApplicationModel.timerUntilShoot>15000)
         {
             if(ApplicationModel.rocasPlayer.Count > 0)
             {
